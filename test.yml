@@ -1,6 +1,4 @@
 - hosts: all
-  roles:
-  - Stouts.graphite-beacon
   tasks:
   - include: tasks/main.yml
   handlers:
