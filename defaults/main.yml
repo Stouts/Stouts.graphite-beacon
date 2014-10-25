@@ -1,0 +1,37 @@
+---
+
+graphite_beacon_enabled: yes                    # The role is enabled
+
+# Setup options
+graphite_beacon_graphite_url: "http://localhost"
+graphite_beacon_auth_username:
+graphite_beacon_auth_password:
+graphite_beacon_pidfile:  "/opt/graphite/beacon/beacon.pid"
+graphite_beacon_interval: 10minute
+graphite_beacon_logging: info
+graphite_beacon_method: average
+graphite_beacon_prefix: "[BEACON]"
+graphite_beacon_critical_handlers: [log, smtp]
+graphite_beacon_warning_handlers: [log, smtp]
+graphite_beacon_normal_handlers: [log, smtp]
+graphite_beacon_repeat: 2hour
+graphite_beacon_format: short
+
+# SMTP Options
+graphite_beacon_smtp_from: "beacon@{{inventory_hostname}}"
+graphite_beacon_smtp_to: []
+graphite_beacon_smtp_host: "localhost"
+graphite_beacon_smtp_port: 25
+graphite_beacon_smtp_username:
+graphite_beacon_smtp_password:
+graphite_beacon_smtp_use_tls: no
+
+# HipChat options
+graphite_beacon_hipchat_room:
+graphite_beacon_hipchat_key:
+
+# Place your alerts
+graphite_beacon_alerts: []
+
+
+# vim:sw=2

@@ -1,0 +1,17 @@
+---
+
+
+- name: graphite-beacon | Add repository
+  when: ansible_os_family == 'Debian'
+  apt_repository: repo="deb http://dl.bintray.com/klen/deb /" validate_certs=no
+
+- name: graphite-beacon | Install graphite-beacon
+  when: ansible_os_family == 'Debian'
+  apt: pkg=graphite-beacon force=yes
+
+- name: graphite-beacon | Ensure the service is started
+  service: name=graphite-beacon state=started enabled=yes
+
+- name: graphite-beacon | Configure the beacon
+  template: src=config.json.j2 dest=/opt/graphite/beacon/config.json
+  notify: graphite-beacon reload

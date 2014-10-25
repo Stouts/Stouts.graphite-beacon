@@ -1,0 +1,7 @@
+---
+
+- name: graphite-beacon restart
+  service: name=graphite-beacon state=restarted
+
+- name: graphite-beacon reload
+  service: name=graphite-beacon state=reloaded

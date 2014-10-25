@@ -1,0 +1,5 @@
+---
+
+- include: graphite-beacon.yml
+  when: graphite_beacon_enabled
+  tags: [graphite-beacon]
