@@ -14,4 +14,4 @@
 
 - name: graphite-beacon | Configure the beacon
   template: src=config.json.j2 dest=/opt/graphite/beacon/config.json
-  notify: graphite-beacon reload
+  notify: graphite-beacon restart
