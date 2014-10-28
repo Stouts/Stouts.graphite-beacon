@@ -43,17 +43,21 @@
     "normal_handlers": {{graphite_beacon_normal_handlers|to_nice_json}},
 
     // SMTP settings
-    "smtp_from": {{graphite_beacon_smtp_from|to_nice_json}},
-    "smtp_to": {{graphite_beacon_smtp_to|to_nice_json}},
-    "smtp_host": {{graphite_beacon_smtp_host|to_nice_json}},
-    "smtp_port": {{graphite_beacon_smtp_port|to_nice_json}},
-    "smtp_username": {{graphite_beacon_smtp_username|to_nice_json}},
-    "smtp_password": {{graphite_beacon_smtp_password|to_nice_json}},
-    "smtp_use_tls": {{graphite_beacon_smtp_use_tls|to_nice_json}},
+    "smtp": {
+        "from": {{graphite_beacon_smtp_from|to_nice_json}},
+        "to": {{graphite_beacon_smtp_to|to_nice_json}},
+        "host": {{graphite_beacon_smtp_host|to_nice_json}},
+        "port": {{graphite_beacon_smtp_port|to_nice_json}},
+        "username": {{graphite_beacon_smtp_username|to_nice_json}},
+        "password": {{graphite_beacon_smtp_password|to_nice_json}},
+        "use_tls": {{graphite_beacon_smtp_use_tls|to_nice_json}}
+    },
 
     // Hipchat settings
-    "hipchat_room": {{graphite_beacon_hipchat_room|to_nice_json}},
-    "hipchat_key": {{graphite_beacon_hipchat_key|to_nice_json}},
+    "hipchat": {
+        "room": {{graphite_beacon_hipchat_room|to_nice_json}},
+        "key": {{graphite_beacon_hipchat_key|to_nice_json}}
+    },
 
     // Place your alerts here
     "alerts": {{graphite_beacon_alerts|to_nice_json}}
