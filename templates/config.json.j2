@@ -26,7 +26,7 @@
 
     // Notification repeat interval
     // If an alert is failed, its notification will be repeated with the interval below
-    "repeat_interval": "2hour",
+    "repeat_interval": "{{graphite_beacon_repeat}}",
 
     // Default loglevel
     "logging": {{graphite_beacon_logging|to_nice_json}},
