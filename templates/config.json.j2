@@ -37,6 +37,8 @@
     // Default prefix (used for notifications)
     "prefix": {{graphite_beacon_prefix|to_nice_json}},
 
+    "send_initial": {{graphite_beacon_send_initial|to_nice_json}},
+
     // Default handlers (log, smtp, hipchat)
     "critical_handlers": {{graphite_beacon_critical_handlers|to_nice_json}},
     "warning_handlers": {{graphite_beacon_warning_handlers|to_nice_json}},

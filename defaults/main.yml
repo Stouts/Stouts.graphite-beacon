@@ -16,6 +16,7 @@ graphite_beacon_warning_handlers: [log, smtp]
 graphite_beacon_normal_handlers: [log, smtp]
 graphite_beacon_repeat: 2hour
 graphite_beacon_format: short
+graphite_beacon_send_initial: no
 
 # SMTP Options
 graphite_beacon_smtp_from: "beacon@{{inventory_hostname}}"
@@ -25,6 +26,7 @@ graphite_beacon_smtp_port: 25
 graphite_beacon_smtp_username:
 graphite_beacon_smtp_password:
 graphite_beacon_smtp_use_tls: no
+graphite_beacon_smtp_graphite_url: "{{graphite_beacon_graphite_url}}"
 
 # HipChat options
 graphite_beacon_hipchat_room:
