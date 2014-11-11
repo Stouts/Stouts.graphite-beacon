@@ -2,8 +2,7 @@ Stouts.graphite-beacon
 ======================
 
 [![Build Status](http://img.shields.io/travis/Stouts/Stouts.graphite-beacon.svg?style=flat-square)](https://travis-ci.org/Stouts/Stouts.graphite-beacon)
-[![Galaxy](http://img.shields.io/badge/galaxy-Stouts.graphite-beacon-blue.svg?style=flat-square)](https://galaxy.graphite-beacon.com/list#/roles/2022)
-[![Tag](http://img.shields.io/github/tag/Stouts/Stouts.graphite-beacon.svg?style=flat-square)]()
+[![Galaxy](http://img.shields.io/badge/galaxy-Stouts.graphite-beacon-blue.svg?style=flat-square)](https://galaxy.ansible.com/list#/roles/2022)
 
 Ansible role which manage [Graphite-beacon](https://github.com/klen/graphite-beacon)
 
