@@ -25,11 +25,13 @@ graphite_beacon_interval: 10minute
 graphite_beacon_logging: info
 graphite_beacon_method: average
 graphite_beacon_prefix: "[BEACON]"
-graphite_beacon_critical_handlers: [log, smtp]
-graphite_beacon_warning_handlers: [log, smtp]
-graphite_beacon_normal_handlers: [log, smtp]
+graphite_beacon_handlers: [log, smtp]
+graphite_beacon_critical_handlers: "{{graphite_beacon_handlers}}"
+graphite_beacon_warning_handlers: "{{graphite_beacon_handlers}}"
+graphite_beacon_normal_handlers: "{{graphite_beacon_handlers}}"
 graphite_beacon_repeat: 2hour
 graphite_beacon_format: short
+graphite_beacon_send_initial: no
 
 # SMTP Options
 graphite_beacon_smtp_from: "beacon@{{inventory_hostname}}"
@@ -39,10 +41,16 @@ graphite_beacon_smtp_port: 25
 graphite_beacon_smtp_username:
 graphite_beacon_smtp_password:
 graphite_beacon_smtp_use_tls: no
+graphite_beacon_smtp_graphite_url: "{{graphite_beacon_graphite_url}}"
 
 # HipChat options
 graphite_beacon_hipchat_room:
 graphite_beacon_hipchat_key:
+
+# Slack options
+graphite_beacon_slack_woobhook:
+graphite_beacon_slack_channel:
+graphite_beacon_slack_username: graphite-beacon
 
 # Place your alerts
 graphite_beacon_alerts: []

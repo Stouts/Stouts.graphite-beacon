@@ -62,6 +62,13 @@
         "key": {{graphite_beacon_hipchat_key|to_nice_json}}
     },
 
+    // Slack settings
+    "slack": {
+        "webhook": {{graphite_beacon_slack_woobhook|to_nice_json}},
+        "channel": {{graphite_beacon_slack_channel|to_nice_json}},
+        "username": {{graphite_beacon_slack_username|to_nice_json}}
+    },
+
     // Place your alerts here
     "alerts": {{graphite_beacon_alerts|to_nice_json}}
 
