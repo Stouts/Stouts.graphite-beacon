@@ -78,12 +78,8 @@ Example:
       query: aliasByNode(*.memory.memory-free, 0)
       interval: 5minute
       rules:
-        - type: critical
-          operator: lt
-          value: 100000000
-        - type: warning
-          operator: lt
-          value: 200000000
+      - critical: < 100MB
+      - warning: < 200MB
 ```
 
 #### License
