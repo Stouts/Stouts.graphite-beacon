@@ -9,9 +9,27 @@
   when: ansible_os_family == 'Debian'
   apt: pkg=graphite-beacon force=yes
 
+- name: graphite-beacon | Install graphite-beacon
+  when: ansible_os_family == 'RedHat'
+  pip: name=graphite-beacon executable=pip2.7
+
+- name: graphite-beacon | Install init.d script
+  when: ansible_os_family == 'RedHat'
+  copy: src=graphite-beacon.sh dest=/etc/init.d/graphite-beacon owner=root group=root mode=0755
+
 - name: graphite-beacon | Ensure the service is started
   service: name=graphite-beacon state=started enabled=yes
 
 - name: graphite-beacon | Configure the beacon
+  when: ansible_os_family == 'Debian'
   template: src=config.json.j2 dest=/opt/graphite/beacon/config.json
+  notify: graphite-beacon restart
+
+- name: graphite-beacon | Ensure config directory exists
+  when: ansible_os_family == 'RedHat'
+  file: path=/etc/graphite_beacon/ state=directory mode=0644
+
+- name: graphite-beacon | Configure the beacon
+  when: ansible_os_family == 'RedHat'
+  template: src=config.json.j2 dest=/etc/graphite_beacon/config.json
   notify: graphite-beacon restart
