@@ -3,7 +3,7 @@
 
 - name: graphite-beacon | Add repository
   when: ansible_os_family == 'Debian'
-  apt_repository: repo="deb http://dl.bintray.com/klen/deb /" validate_certs=no
+  apt_repository: repo="deb https://dl.bintray.com/klen/deb /"
 
 - name: graphite-beacon | Install graphite-beacon
   when: ansible_os_family == 'Debian'
